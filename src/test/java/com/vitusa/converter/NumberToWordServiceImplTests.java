@@ -20,17 +20,17 @@ public class NumberToWordServiceImplTests {
 	public void testConvert(){
 	
 		int number= 128;
-		String actualResult = numberToWordServiceImpl.convert(number);
+		String actualResult = numberToWordServiceImpl.convert(number).trim();
         System.out.println(actualResult);
-        assertThat(actualResult).isEqualTo("ONE HUNDRED AND TWENTY EIGHT");
+        assertThat(actualResult).isEqualToIgnoringCase("ONE HUNDRED AND TWENTY EIGHT");
 	}
 	
 	@Test
 	public void testPrepareNumberUnit(){
 		
-		int number= 788;
+		int number= 128;
 		String actualResult = numberToWordServiceImpl.prepareNumberUnit(number);
-        assertThat(actualResult).isEqualTo("SEVEN HUNDRED AND EIGHTY EIGHT");
+        assertThat(actualResult).isEqualToIgnoringCase("ONE HUNDRED AND TWENTY EIGHT");
 	}
 
 }
