@@ -21,7 +21,6 @@ public class NumberToWordServiceImplTests {
 	
 		int number= 128;
 		String actualResult = numberToWordServiceImpl.convert(number).trim();
-        System.out.println(actualResult);
         assertThat(actualResult).isEqualToIgnoringCase("ONE HUNDRED AND TWENTY EIGHT");
 	}
 	
