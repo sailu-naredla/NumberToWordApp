@@ -30,7 +30,7 @@ public class NumberToWordServiceImpl implements NumberToWordService {
 	            int reminder = number % 1000;
 	            if (reminder != 0){
 	                String word = prepareNumberUnit(reminder);
-	                resultWord = word + (unitIndex > 0 ? RangeNames.values()[unitIndex] : "") + " "+resultWord;
+	                resultWord = word +" "+RangeNames.values()[unitIndex].getRangeName()+ " "+resultWord;
 	            }
 	            unitIndex++;
 	            number /= 1000;
@@ -47,15 +47,15 @@ public class NumberToWordServiceImpl implements NumberToWordService {
         String current;
         try{
 	        if (number % 100 < 20){
-	        	current = NumberNames.values()[number % 100] + " ";
+	        	current = NumberNames.values()[number % 100].getNumberName();
 	            number /= 100;
 	        }
 	        else {
-	            current = NumberNames.values()[number % 10] + " ";
+	            current = NumberNames.values()[number % 10].getNumberName();
 	            number /= 10;
-	            
-	            current = TenNames.values()[number % 10] +" "+ current;
+	            current = TenNames.values()[number % 10].getTenName() + " "+current;
 	            number /= 10;
+	           
 	        }
 	        if (number == 0){
 	        	return current;

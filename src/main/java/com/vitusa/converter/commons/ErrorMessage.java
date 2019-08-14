@@ -7,7 +7,7 @@ public enum ErrorMessage {
 	ARGUMENT_ERROR("Error While Reading command line arguments");
 	
 	
-	 private String name;
+	private String name;
 
     private ErrorMessage(String name) {
         this.name = name;

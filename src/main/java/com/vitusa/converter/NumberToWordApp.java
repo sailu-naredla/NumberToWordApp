@@ -35,7 +35,7 @@ public class NumberToWordApp implements CommandLineRunner{
         	}
            
         } else {
-        	System.out.println("Invalid Number"+numberToWordService.convert(12440446));
+        	System.out.println("Invalid Number"+numberToWordService.convert(980449));
         }
 
         exit(0);
